@@ -3,23 +3,54 @@
  * accessibility for submenu items.
  */
 (function () {
-    console.log ('ads');
-//     make header stick
+    //     make header stick
     $(document).ready(function () {
-        $(window).scroll(function () {
-            if ($('#masthead').position().top < $(this).scrollTop()) {
-                $('#masthead').addClass('stick-header').css({
-                    "position": "fixed",
-                    "width": "100%",
-                    "top": 0, "background": "#fff",
-                    "margin-top": 0,
-                    "z-index": 100
-                });
-            } else if ($('#masthead').hasClass("stick-header")) {
-
-                $('#masthead').removeClass("stick-header").css({"position": "relative"});
+        if ($('#masthead , #top-navigation').position().top < ($(window).scrollTop() - 20) && $(window).width() < 768) {
+            headerSticky(true);
+        }
+        
+        $(window).resize(function () {
+            if ($(window).width() > 768) {
+                headerSticky(false);
+            }
+            else {
+                headerSticky(true);
             }
         });
+        
+        $(window).scroll(function () {
+
+            if ($('#masthead , #top-navigation').position().top < ($(this).scrollTop() - 20) && $(window).width() < 768) {
+                headerSticky(true);
+
+            } else if ($('#masthead , #top-navigation').hasClass("stick-header")) {
+                headerSticky(false);
+            }
+
+        });
+        function headerSticky(check) {
+            if (check) {
+                if (!$('#masthead').hasClass('stick-header')) {
+                    $("#main").before("<div id='fack-space-header' style=''></div>");
+                }
+                $('#masthead , #top-navigation').addClass('stick-header').css({
+                    "position": "fixed",
+                    "width": "100%",
+                    "background": "#fff",
+                    "opacity": "0.8"
+                });
+                $('#masthead ').css({"top": "30px", "padding": "0"});
+                $('#top-navigation ').css({"margin-top": "0"});
+
+                $("#top-navigation .menu-top-info-menu-container").css({"width": "90%"});
+
+                $('#fack-space-header').height($("#top-navigation").height() + $('#masthead').height());
+            } else {
+                $('#masthead , #top-navigation , .menu-top-info-menu-container , .menu-top-info-menu-container li').removeClass("stick-header").removeAttr("style");
+                $("#fack-space-header").remove();
+            }
+
+        }
     });
 // end make header stick
 
