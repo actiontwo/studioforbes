@@ -68,7 +68,7 @@ function twentytwelve_setup() {
      * and here we also set up the default background color.
      */
     add_theme_support('custom-background', array(
-        'default-color' => 'e6e6e6',
+      'default-color' => 'e6e6e6',
     ));
 
     // This theme uses a custom image size for featured images, displayed on "standard" posts.
@@ -116,8 +116,8 @@ function twentytwelve_get_font_url() {
 
         $protocol = is_ssl() ? 'https' : 'http';
         $query_args = array(
-            'family' => 'Open+Sans:400italic,700italic,400,700',
-            'subset' => $subsets,
+          'family' => 'Open+Sans:400italic,700italic,400,700',
+          'subset' => $subsets,
         );
         $font_url = add_query_arg($query_args, "$protocol://fonts.googleapis.com/css");
     }
@@ -244,33 +244,33 @@ add_filter('wp_page_menu_args', 'twentytwelve_page_menu_args');
  */
 function twentytwelve_widgets_init() {
     register_sidebar(array(
-        'name' => __('Main Sidebar', 'twentytwelve'),
-        'id' => 'sidebar-1',
-        'description' => __('Appears on posts and pages except the optional Front Page template, which has its own widgets', 'twentytwelve'),
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
+      'name' => __('Main Sidebar', 'twentytwelve'),
+      'id' => 'sidebar-1',
+      'description' => __('Appears on posts and pages except the optional Front Page template, which has its own widgets', 'twentytwelve'),
+      'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+      'after_widget' => '</aside>',
+      'before_title' => '<h3 class="widget-title">',
+      'after_title' => '</h3>',
     ));
 
     register_sidebar(array(
-        'name' => __('First Front Page Widget Area', 'twentytwelve'),
-        'id' => 'sidebar-2',
-        'description' => __('Appears when using the optional Front Page template with a page set as Static Front Page', 'twentytwelve'),
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
+      'name' => __('First Front Page Widget Area', 'twentytwelve'),
+      'id' => 'sidebar-2',
+      'description' => __('Appears when using the optional Front Page template with a page set as Static Front Page', 'twentytwelve'),
+      'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+      'after_widget' => '</aside>',
+      'before_title' => '<h3 class="widget-title">',
+      'after_title' => '</h3>',
     ));
 
     register_sidebar(array(
-        'name' => __('Second Front Page Widget Area', 'twentytwelve'),
-        'id' => 'sidebar-3',
-        'description' => __('Appears when using the optional Front Page template with a page set as Static Front Page', 'twentytwelve'),
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
+      'name' => __('Second Front Page Widget Area', 'twentytwelve'),
+      'id' => 'sidebar-3',
+      'description' => __('Appears when using the optional Front Page template with a page set as Static Front Page', 'twentytwelve'),
+      'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+      'after_widget' => '</aside>',
+      'before_title' => '<h3 class="widget-title">',
+      'after_title' => '</h3>',
     ));
 }
 
@@ -295,7 +295,7 @@ if (!function_exists('twentytwelve_content_nav')) :
                 <div class="nav-previous"><?php next_posts_link(__('<span class="meta-nav">&larr;</span> Older posts', 'twentytwelve')); ?></div>
                 <div class="nav-next"><?php previous_posts_link(__('Newer posts <span class="meta-nav">&rarr;</span>', 'twentytwelve')); ?></div>
             </nav><!-- #<?php echo $html_id; ?> .navigation -->
-        <?php
+            <?php
         endif;
     }
 
@@ -322,12 +322,12 @@ if (!function_exists('twentytwelve_comment')) :
                 ?>
                 <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
                     <p><?php _e('Pingback:', 'twentytwelve'); ?> <?php comment_author_link(); ?> <?php edit_comment_link(__('(Edit)', 'twentytwelve'), '<span class="edit-link">', '</span>'); ?></p>
-                            <?php
-                            break;
-                        default :
-                            // Proceed with normal comments.
-                            global $post;
-                            ?>
+                    <?php
+                    break;
+                default :
+                    // Proceed with normal comments.
+                    global $post;
+                    ?>
                 <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
                     <article id="comment-<?php comment_ID(); ?>" class="comment">
                         <header class="comment-meta comment-author vcard">
@@ -343,17 +343,17 @@ if (!function_exists('twentytwelve_comment')) :
                             ?>
                         </header><!-- .comment-meta -->
 
-                            <?php if ('0' == $comment->comment_approved) : ?>
+                        <?php if ('0' == $comment->comment_approved) : ?>
                             <p class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.', 'twentytwelve'); ?></p>
-                <?php endif; ?>
+                        <?php endif; ?>
 
                         <section class="comment-content comment">
-                <?php comment_text(); ?>
-                    <?php edit_comment_link(__('Edit', 'twentytwelve'), '<p class="edit-link">', '</p>'); ?>
+                            <?php comment_text(); ?>
+                            <?php edit_comment_link(__('Edit', 'twentytwelve'), '<p class="edit-link">', '</p>'); ?>
                         </section><!-- .comment-content -->
 
                         <div class="reply">
-                    <?php comment_reply_link(array_merge($args, array('reply_text' => __('Reply', 'twentytwelve'), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
+                            <?php comment_reply_link(array_merge($args, array('reply_text' => __('Reply', 'twentytwelve'), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
                         </div><!-- .reply -->
                     </article><!-- #comment-## -->
                     <?php
@@ -500,4 +500,7 @@ if (!function_exists('twentytwelve_comment')) :
     }
 
     add_action('customize_preview_init', 'twentytwelve_customize_preview_js');
+   
+    //add it in your functions.php (on the actual theme)
+    add_filter('edit_post_link', '__return_false');
     

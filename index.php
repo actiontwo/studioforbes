@@ -16,7 +16,7 @@
 get_header();
 ?>
 
-<div id="primary" class="site-content">
+<div id="primary" class="site-content index-page">
     <div id="content" role="main">
         <?php if (have_posts()) : ?>
 
@@ -28,7 +28,7 @@ get_header();
             <?php twentytwelve_content_nav('nav-below'); ?>
 
         <?php else : ?>
-
+        <div id='content-index'></div>
             <article id="post-0" class="post no-results not-found">
 
                 <?php

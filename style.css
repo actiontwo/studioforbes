@@ -1,5 +1,5 @@
 /*
-Theme Name: Twenty Twelve
+Theme Name: Studioforbes
 Theme URI: http://wordpress.org/themes/twentytwelve
 Author: the WordPress team
 Author URI: http://wordpress.org/
@@ -313,7 +313,9 @@ input[type="reset"]:active {
     box-shadow: none;
     padding: 0;
 }
-
+ul#menu-top-info-menu {
+    padding-right: 7px;
+}
 /* Responsive images */
 .entry-content img,
 .comment-content img,
@@ -369,7 +371,9 @@ img.wp-post-image {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);*/
 }
 .postimage{
-    background:rgb(255, 102, 51)
+    background:rgb(255, 102, 51);
+
+    line-height: 0;
 
 }
 .postimage a:hover img{
@@ -378,11 +382,24 @@ img.wp-post-image {
 }
 .postimage, .postimage img{
 
-    width: 175px;
-    height: 160px;
+    /*    width: 175px;
+        height: 160px;*/
+    width: 100%;
+    height: 100%;
+}
+.postimage-title{
+    margin-top: 10px;
+}
+.thumbnailgridcontainer {
+    /*margin: 0 -20px;*/
+}
+.thumbnailgridcontainer .postimage-title a:hover{
+    color:#333;
 }
 .griditemleft{
-    margin: 8px
+    /*margin: 8px*/
+    margin: 1%;
+    width: 23%;
 }
 .wp-caption {
     max-width: 100%; /* Keep wide captions from overflowing their container. */
@@ -619,6 +636,13 @@ a:hover {
 #menu-sf-primary-menu > li{
     border-right: 3px double #6a6a6a;
 }
+ul#menu-sf-primary-menu li:first-child {
+    margin-left: 0;
+}
+
+ul.sub-menu li {
+    margin: 0;
+}
 .main-navigation ul.nav-menu.toggled-on,
 .menu-toggle {
     display: inline-block;
@@ -825,10 +849,12 @@ article.sticky .featured-post {
     margin: 0 0 1.714285714rem;
     line-height: 1.714285714;
 }
+.entry-content .postimage-title a,
 .entry-content a:visited,
 .comment-content a:visited {
     color: #9f9f9f;
 }
+
 .entry-content ol,
 .comment-content ol,
 .entry-content ul,
@@ -1053,7 +1079,10 @@ footer.entry-meta {
 .entry-content {
     text-align: justify;
 }
-
+#content-page .entry-content {
+    margin: 0;/*
+    width: 100%;*/
+}
 /* =Single image attachment view
 -------------------------------------------------------------- */
 
@@ -1530,6 +1559,7 @@ img#wpstats {
     #menu-sf-primary-menu > li{
         border-right: 3px double #6a6a6a;
     }
+
 }
 @media screen and (min-width: 600px) {
 
@@ -1614,7 +1644,7 @@ img#wpstats {
 
     .main-navigation li {
         margin: 0 20px 0 0;
-        margin: 0 1.4285714285rem  0 0px;
+        margin: 0 0  0 1.4285714285rem  ;
         position: relative;
     }
     .main-navigation li ul {
@@ -1720,6 +1750,25 @@ img#wpstats {
     }
 
 }
+@media screen and (max-width:960px) {
+    /*    .thumbnailgridcontainer{
+            width: 100%;
+        }
+        .postimage {
+            width: 250px;
+            height: 250px;
+        }
+        .postimage img{
+            width: 100%;
+            height: 100%;
+        }*/
+}
+@media screen and (max-width:850px){
+    /*    .postimage {
+            width: 245px;
+            height: 245px;
+        }   */
+}
 @media screen and (max-width: 768px) {
     .entry-content {
         margin-right: 0;
@@ -1745,8 +1794,8 @@ img#wpstats {
 
     ul#menu-sf-primary-menu > li {
         text-transform: uppercase;
+        margin:0;
     }
-
     ul#menu-sf-primary-menu > li a:hover {
         color: #000;
         text-decoration: none;
@@ -1759,6 +1808,7 @@ img#wpstats {
 
     .main-navigation li a{
         line-height: 30px;
+        text-decoration: none;
     }
 
     #ipad{display: block;}
@@ -1780,7 +1830,7 @@ img#wpstats {
     }
     .nav-menu.toggled-on{
         position: absolute;
-        width: 90%!important;
+        width: 100%;
         left: 0px;
         top:50px;
         background: rgba(255,255,255,0.8);
@@ -1829,6 +1879,11 @@ img#wpstats {
 
 }
 @media screen and (max-width: 599px){
+    .griditemleft {
+        /* margin: 8px; */
+        margin: 1%;
+        width: 31%;
+    }
     #top-navigation #menu-top-info-menu{
         float:right;
     }
@@ -1850,6 +1905,13 @@ img#wpstats {
     }
     #top-navigation #menu-top-info-menu li a:hover{
         color:#000;
+    }
+}
+@media screen and (max-width: 400px){
+    .griditemleft {
+        /* margin: 8px; */
+        margin: 1%;
+        width: 48%;
     }
 }
 /* =Print

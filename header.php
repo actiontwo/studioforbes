@@ -26,7 +26,11 @@
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
         <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/css/favicon.ico" type="image/x-icon">
         <link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/css/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/jquery.bxslider.css">
+
+
         <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js" type="text/javascript"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.bxslider.js" type="text/javascript"></script>       
         <?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
         <!--[if lt IE 9]>
         <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
@@ -43,10 +47,10 @@
                 <div class='clear-fix'></div>
             </div>
             <header id="masthead" class="site-header" role="banner">
-                <hgroup>
-                    <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-                    <h2 class="site-description"><?php bloginfo('description'); ?></h2>
-                </hgroup>
+                <!--                <hgroup>
+                                    <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
+                                    <h2 class="site-description"><?php bloginfo('description'); ?></h2>
+                                </hgroup>-->
                 <?php if (get_header_image()) : ?>
                     <a id='full-screen' href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php header_image(); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
                 <?php endif; ?>

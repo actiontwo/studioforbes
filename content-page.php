@@ -7,11 +7,11 @@
  * @since Twenty Twelve 1.0
  */
 ?>
-
+<div id="content-page">
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
         <?php if (!is_page_template('page-templates/front-page.php')) : ?>
-            <?php the_post_thumbnail(); ?>
+            <?php // the_post_thumbnail(); ?>
         <?php endif; ?>
         <h1 class="entry-title"><?php the_title(); ?></h1>
     </header>
@@ -24,3 +24,4 @@
         <?php edit_post_link(__('Edit', 'twentytwelve'), '<span class="edit-link">', '</span>'); ?>
     </footer><!-- .entry-meta -->
 </article><!-- #post -->
+</div>
